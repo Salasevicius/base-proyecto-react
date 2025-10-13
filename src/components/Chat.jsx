@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useChat } from "../context/ChatContext"
+import { useNavigate } from "react-router-dom"
 
 export default function Chat() {
   const [msg, setMsg] = useState("")
@@ -9,6 +10,8 @@ export default function Chat() {
 
   // 2. Buscamos el usuario activo
   const user = users.find(u => u.id === selectedUser)
+
+  const navigate = useNavigate()
 
   if (!user) {
     return (
@@ -44,6 +47,10 @@ export default function Chat() {
 
     setMsg("")
   }
+  const handleLogout = () => {
+    localStorage.removeItem("IsLoggedIn")
+    navigate("/")
+  }
 
   return (
     <div className="chat">
@@ -61,10 +68,9 @@ export default function Chat() {
         </div>
 
         <div className="chat-actions">
-          <button title="Camera">📷</button>
-          <button title="Gallery">🖼️</button>
           <button title="Settings">⚙️</button>
           <button title="Help">❓</button>
+          <button onClick={handleLogout}>Cerrar sesión 🚪</button>
         </div>
       </header>
 
