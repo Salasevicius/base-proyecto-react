@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useChat } from "../context/ChatContext"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Chat() {
   const [msg, setMsg] = useState("")
@@ -89,7 +89,7 @@ export default function Chat() {
 
           <div className="chat-actions">
             <button title="Settings" onClick={handleShowPopup}>⚙️</button>
-            <button title="Help">❓</button>
+            <Link to="/help" title="Help">❓</Link>
             <button onClick={handleLogout}>Cerrar sesión 🚪</button>
           </div>
         </header>
