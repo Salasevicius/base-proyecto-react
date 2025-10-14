@@ -9,7 +9,6 @@ const ThemeProvider = ({ children }) => {
     return storedTheme ? storedTheme : "light";
   });
 
-
   // 2. Cada vez que el tema cambie, guardamos en localStorage
   useEffect(() => {
     localStorage.setItem("theme", theme);
