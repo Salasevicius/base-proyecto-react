@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useChat } from "../context/ChatContext"
 import { Link, useNavigate } from "react-router-dom"
 import { useTheme } from "../context/ThemeContext.jsx";
+import logo from "../assets/images/logo.png"
+import avatar from "../assets/images/avatar.jpeg"
 
 export default function Chat() {
   const [msg, setMsg] = useState("")
@@ -103,24 +105,24 @@ export default function Chat() {
                   <div className="image-list">
                     {selectedUserName === "Juan" && (
                       <>
-                        <img src="https://via.placeholder.com/100/FF0000" alt="Juan1" />
-                        <img src="https://via.placeholder.com/100/FF0000" alt="Juan2" />
+                        <img width={100} src={logo} alt="Juan Logo de Whatsapp" />
+                        <img width={100} src={avatar} alt="Juan Avatar Image" />
                       </>
                     )}
                     {selectedUserName === "Marita" && (
                       <>
-                        <img src="https://via.placeholder.com/100/00FF00" alt="Marita1" />
+                        <img width={100} src={avatar} alt="Marita Avatar Image" />
                       </>
                     )}
                     {selectedUserName === "Luka" && (
                       <>
-                        <img src="https://via.placeholder.com/100/0000FF" alt="Luka1" />
-                        <img src="https://via.placeholder.com/100/0000FF" alt="Luka2" />
+                        <img width={100} src={avatar} alt="Luka Avatar Image" />
+                        <img width={100} src={logo} alt="Luka Logo Whatsapp" />
                       </>
                     )}
                     {selectedUserName === "Lucas" && (
                       <>
-                        <img src="https://via.placeholder.com/100/FFFF00" alt="Lucas1" />
+                        <img width={100} src={avatar} alt="Lucas Avatar Image" />
                       </>
                     )}
                   </div>
