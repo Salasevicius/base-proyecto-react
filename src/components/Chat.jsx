@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { useChat } from "../context/ChatContext"
 import { Link, useNavigate } from "react-router-dom"
+import { useTheme } from "../context/ThemeContext.jsx";
 
 export default function Chat() {
   const [msg, setMsg] = useState("")
   const [showPopup, setShowPopup] = useState(false)
+  const { theme, setTheme } = useTheme();
 
   // 1. Obtenemos del contexto todo lo necesario
   const { users, selectedUser, setUsers } = useChat()
@@ -64,16 +66,26 @@ export default function Chat() {
   return (
     <>
       {
-        showPopup === true && <section className="cont-popup">
-          <div className="popup">
-            <h2>Configuración del Chat</h2>
-            <button onClick={handleClosePopup}>Cerrar</button>
+        showPopup === true && (
+          <section className="cont-popup">
+            <div className="popup">
+              <h2>Configuración del Chat</h2>
 
-          </div>
-        </section>
+              <div className="theme-options">
+                <p>Tema actual: <strong>{theme === "light" ? "Claro" : "Oscuro"}</strong></p>
+                <div className="theme-buttons">
+                  <button onClick={() => setTheme("light")}>☀️ Claro</button>
+                  <button onClick={() => setTheme("dark")}>🌙 Oscuro</button>
+                </div>
+              </div>
+
+              <button className="btn-close" onClick={handleClosePopup}>Cerrar</button>
+            </div>
+          </section>
+        )
       }
 
-      <div className="chat">
+      <div className={`chat ${theme}`}>
         <header className="chat-header">
           <div>
             <div className="chat-user">
