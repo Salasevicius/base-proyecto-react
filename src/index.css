@@ -299,18 +299,15 @@ form .text-info {
 
 .popup button {
   padding: 3px 12px;
-  background: #ff4d4d;
-  border: 1px solid rgb(201, 201, 201);
   border-radius: 8px;
-  color: white;
-  margin-top: 20px;
+  margin: 10px;
   cursor: pointer;
   font-weight: bold;
 }
 
 .popup button:hover {
-  background: #e60000;
-  transform: scale(1.05);
+  transform: scale(1.10);
+  transition: transform 0.4s;
 }
 
 /* Títulos dentro del popup */
@@ -318,6 +315,22 @@ form .text-info {
   margin-bottom: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
+}
+
+.theme-options p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #000000;
+}
+
+.btn-light {
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: #e8e8e8;
 }
 
 /* Tema oscuro. No sé si están bien implementados los estilos, pero al menos así funcionó. Revisar en otro momento */
@@ -382,6 +395,67 @@ body[data-theme="dark"] .chat-footer button {
 body[data-theme="dark"] .chat-actions button {
   color: white;
 }
+
+.image-history {
+  margin-top: 20px;
+}
+
+.image-history label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.image-history select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.image-popup {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.image-popup h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.image-list img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.image-list img:hover {
+  transform: scale(1.1);
+}
+
+.btn-close-images {
+  margin-top: 10px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 
 
 /* Resposive mínimo para mobile */

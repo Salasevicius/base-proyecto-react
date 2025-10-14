@@ -6,6 +6,8 @@ import { useTheme } from "../context/ThemeContext.jsx";
 export default function Chat() {
   const [msg, setMsg] = useState("")
   const [showPopup, setShowPopup] = useState(false)
+  const [selectedUserName, setSelectedUserName] = useState(""); // controla el usuario seleccionado en el popup
+
   const { theme, setTheme } = useTheme();
 
   // 1. Obtenemos del contexto todo lo necesario
@@ -74,13 +76,62 @@ export default function Chat() {
               <div className="theme-options">
                 <p>Tema actual: <strong>{theme === "light" ? "Claro" : "Oscuro"}</strong></p>
                 <div className="theme-buttons">
-                  <button onClick={() => setTheme("light")}>☀️ Claro</button>
-                  <button onClick={() => setTheme("dark")}>🌙 Oscuro</button>
+                  <button className="btn-light" onClick={() => setTheme("light")}>☀️ Claro</button>
+                  <button className="btn-dark" onClick={() => setTheme("dark")}>🌙 Oscuro</button>
                 </div>
+
               </div>
+              {/* NUEVO: Selector de usuario para historial de imágenes */}
+              <div className="image-history">
+                <label>Historial de Imágenes enviadas</label>
+                <select
+                  value={selectedUserName}
+                  onChange={(e) => setSelectedUserName(e.target.value)}
+                >
+                  <option value="">Seleccionar usuario...</option>
+                  <option value="Juan">Juan Perez</option>
+                  <option value="Marita">Marita Rodriguez</option>
+                  <option value="Luka">Luka Nicolas Piaggi</option>
+                  <option value="Lucas">Lucas Hernan Figueroa</option>
+                </select>
+              </div>
+
+              {/* NUEVO: Popup con imágenes del usuario seleccionado */}
+              {selectedUserName && (
+                <div className="image-popup">
+                  <h3>{selectedUserName} - Imágenes enviadas</h3>
+                  <div className="image-list">
+                    {selectedUserName === "Juan" && (
+                      <>
+                        <img src="https://via.placeholder.com/100/FF0000" alt="Juan1" />
+                        <img src="https://via.placeholder.com/100/FF0000" alt="Juan2" />
+                      </>
+                    )}
+                    {selectedUserName === "Marita" && (
+                      <>
+                        <img src="https://via.placeholder.com/100/00FF00" alt="Marita1" />
+                      </>
+                    )}
+                    {selectedUserName === "Luka" && (
+                      <>
+                        <img src="https://via.placeholder.com/100/0000FF" alt="Luka1" />
+                        <img src="https://via.placeholder.com/100/0000FF" alt="Luka2" />
+                      </>
+                    )}
+                    {selectedUserName === "Lucas" && (
+                      <>
+                        <img src="https://via.placeholder.com/100/FFFF00" alt="Lucas1" />
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+
+
 
               <button className="btn-close" onClick={handleClosePopup}>Cerrar</button>
             </div>
+
           </section>
         )
       }
