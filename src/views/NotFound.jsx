@@ -1,3 +1,4 @@
+//Componente de página no encontrada
 import { Link } from "react-router-dom"
 
 const NotFound = () => {

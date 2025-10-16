@@ -59,6 +59,8 @@ export default function Chat() {
     navigate("/")
   }
 
+  {/* Funciones para manejar el PopUp */ }
+
   const handleShowPopup = () => {
     setShowPopup(true)
   }
@@ -68,25 +70,26 @@ export default function Chat() {
   }
 
   return (
+
     <>
       {
         showPopup === true && (
           <section className="cont-popup">
             <div className="popup">
-              <h2>Configuración del Chat</h2>
+              <h2>⚙️ Configuración y opciones del Chat</h2>
 
               {/* Selector de Tema Claro/Oscuro */}
               <div className="theme-options">
                 <p>Tema actual: <strong>{theme === "light" ? "Claro" : "Oscuro"}</strong></p>
                 <div className="theme-buttons">
-                  <button className="btn-light" onClick={() => setTheme("light")}>☀️ Claro</button>
-                  <button className="btn-dark" onClick={() => setTheme("dark")}>🌙 Oscuro</button>
+                  <button className="btn-light" onClick={() => setTheme("light")}>☀️ Light</button>
+                  <button className="btn-dark" onClick={() => setTheme("dark")}>🌙 Dark</button>
                 </div>
               </div>
 
               {/* Selector de usuario para historial de imágenes */}
               <div className="image-history">
-                <label>Historial de Imágenes enviadas</label>
+                <label>Imágenes enviadas por usuarios</label>
                 <select
                   value={selectedUserName}
                   onChange={(e) => setSelectedUserName(e.target.value)}>

@@ -1,3 +1,5 @@
+//Componente de mensajes con contexto de chat
+
 import Chat from "../components/Chat"
 import Sidebar from "../components/Sidebar"
 import { ChatProvider } from "../context/ChatContext"

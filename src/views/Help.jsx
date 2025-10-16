@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import "../assets/images/styles/help.css"
 
+// Componente de ayuda del chat
+
 const Help = () => {
   return (
     <main className="help-main">

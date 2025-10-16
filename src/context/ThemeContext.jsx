@@ -22,7 +22,7 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-// Hook personalizado para consumir el contexto fácilmente
+// Hook personalizado para consumir el contexto
 const useTheme = () => useContext(ThemeContext);
 
 export { ThemeProvider, useTheme };
