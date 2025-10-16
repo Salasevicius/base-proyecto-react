@@ -1,12 +1,20 @@
-# React + Vite
+# 💬 Chat App UTN Trabajo práctico final Front End — Nuevas Funcionalidades
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌙 Modo Oscuro / Claro
+Se agregó un sistema de temas intercambiables desde el popup de configuración.  
+El modo seleccionado se guarda automáticamente en `localStorage`.
 
-Currently, two official plugins are available:
+## 🖼️ Historial de Imágenes
+Nuevo menú desplegable en el popup que permite ver imágenes enviadas por cada usuario en una galería emergente.
+Lo ideal sería haber utilizado un array de URLs de imágenes y asignar imágenes "mock" a cada usuario, según he investigado.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ❓ Página de Ayuda
+Página estática con información sobre el uso del chat, las tecnologías empleadas y mejoras futuras.
 
-## Expanding the ESLint configuration
+## ⚙️ Tecnologías
+React · React Router · CSS3 · LocalStorage · Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Próximas Mejoras
+- Selector de tamaño de fuente  
+- Personalización de color de acento  
+- Sistema de notificaciones visuales
